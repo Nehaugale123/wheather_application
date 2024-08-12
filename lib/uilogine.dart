@@ -1,0 +1,154 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class Ui extends StatefulWidget {
+  const Ui({super.key});
+
+  @override
+  State<Ui> createState() => _UiState();
+}
+
+class _UiState extends State<Ui> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 300,
+              child: Stack(
+                children: [
+                  Positioned(
+                    height: 300,
+                    top: -40,
+                    width: MediaQuery.of(context).size.width,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/background.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    height: 300,
+                    width: MediaQuery.of(context).size.width + 20,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/background-2.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Login",
+                    style: TextStyle(
+                      color: Color.fromRGBO(49, 39, 79, 1),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                      border: Border.all(color: Color.fromRGBO(196, 135, 198, .3)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromRGBO(196, 135, 198, .3),
+                          blurRadius: 20,
+                          offset: Offset(0, 10),
+                        )
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Color.fromRGBO(196, 135, 198, .3)),
+                            ),
+                          ),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Username",
+                              hintStyle: TextStyle(color: Colors.grey.shade700),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          child: TextField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Password",
+                              hintStyle: TextStyle(color: Colors.grey.shade700),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Center(
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Forgot Password?",
+                  style: TextStyle(color: Color.fromRGBO(196, 135, 198, 1)),
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+            Center(
+              child: MaterialButton(
+                onPressed: () {},
+                color: Color.fromRGBO(49, 39, 79, 1),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                height: 50,
+                child: Text(
+                  "Login",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+            Center(
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Create Account",
+                  style: TextStyle(color: Color.fromRGBO(49, 39, 79, .6)),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
